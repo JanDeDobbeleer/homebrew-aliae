@@ -6,13 +6,14 @@ class Aliae < Formula
   sha256 "e0a43a5cc87a9fb2cd87fca3ff1d5614a75716bf69a4eb2be50adfe45e5d9632"
   license "MIT"
   version "0.1.0"
+  revision 1
 
   depends_on "go@1.20" => :build
 
   def install
     Dir.chdir("src") do
       ENV["GOPROXY"] = ENV.has_key?("HOMEBREW_GOPROXY") ? ENV["HOMEBREW_GOPROXY"] : ""
-      system("go build -o=aliae -ldflags=\"-s -w -X \'main.Version=17.5.3\'\"")
+      system("go build -o=aliae -ldflags=\"-s -w -X \'main.Version=0.1.0\'\"")
       bin.install "aliae"
     end
   end

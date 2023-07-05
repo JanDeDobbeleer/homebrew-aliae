@@ -12,7 +12,7 @@ class Aliae < Formula
   def install
     Dir.chdir("src") do
       ENV["GOPROXY"] = ENV.has_key?("HOMEBREW_GOPROXY") ? ENV["HOMEBREW_GOPROXY"] : ""
-      system("go build -o=aliae -ldflags=\"-s -w -X \'main.Version=17.5.3\'\"")
+      system("go build -o=aliae -ldflags=\"-s -w -X \'main.Version=<VERSION>\'\"")
       bin.install "aliae"
     end
   end
