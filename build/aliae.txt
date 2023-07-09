@@ -20,7 +20,7 @@ class Aliae < Formula
   def caveats
     <<~EOS
       Thanks for installing aliae.
-      Have a look at https://www.aliae.dev/docs/configuration/shell for detailed instructions for your shell.
+      Have a look at https://www.aliae.dev/docs/setup/shell for detailed instructions for your shell.
 
       If you're enjoying aliae, feel free to donate or become a sponsor.
       https://github.com/sponsors/JanDeDobbeleer
