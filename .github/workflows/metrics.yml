@@ -27,13 +27,21 @@ jobs:
             owner: 'jandedobbeleer',
             repo: 'homebrew-aliae'
           });
+
           const isSameDay = (first, second) =>
             first.getFullYear() === second.getFullYear() &&
             first.getMonth() === second.getMonth() &&
             first.getDate() === second.getDate();
+
           const parseDate = (timestamp) => new Date(Date.parse(timestamp));
           const yesterday = ( d => new Date(d.setDate(d.getDate()-1)) )(new Date);
+
           yesterday_clones = clones.data.clones.find(clone => isSameDay(yesterday, parseDate(clone.timestamp)));
+
+          if (yesterday_clones === undefined) {
+            yesterday_clones = {uniques: 0};
+          }
+
           let client = appInsights.defaultClient;
           client.trackMetric({name: "homebrew installs", value: yesterday_clones.uniques});
           console.log(yesterday_clones.uniques);
