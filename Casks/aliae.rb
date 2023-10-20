@@ -2,10 +2,10 @@ cask "aliae" do
     desc "Cross shell and platform alias management"
     homepage "https://aliae.dev"
     arch arm: "arm64", intel: "amd64"
-    version "0.13.1"
+    version "0.13.2"
     url "https://github.com/JanDeDobbeleer/aliae/releases/download/v#{version}/aliae-darwin-#{arch}"
-    sha256 arm:   "4c9d4eebb1bf8a7bcd2f28c50a4de8bc8cac4d4d5419da245364e7b7b8d69714",
-           intel: "9aed9472524d3e3533faafc3904cc0c3c4034c7409a51d1425012998ee1d96bd"
+    sha256 arm:   "481f7f07a23d6ecce8a8ba97ee2f08ee1e3795df0a03d8566fd3d0f33203e065",
+           intel: "f3d4b652748da910797c5485e40fc800b904a2ac734099498cfa1855178c5e53"
     name "aliae"
     binary "aliae-darwin-#{arch}", target: "aliae"
     auto_updates true
