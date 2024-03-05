@@ -1,18 +1,18 @@
 class Aliae < Formula
   desc "Cross shell and platform alias management"
   homepage "https://aliae.dev"
-  url "https://github.com/JanDeDobbeleer/aliae/archive/v0.17.2.tar.gz"
+  url "https://github.com/JanDeDobbeleer/aliae/archive/v0.18.0.tar.gz"
   head "https://github.com/JanDeDobbeleer/aliae.git", branch: "main"
-  sha256 "17e4eb7cca0ffa37659b3326ad39a0c35c7ace4a4bc4572d4429325e7919c31c"
+  sha256 "88d2ed0bce40fa12a6f6d098675a46c2f2cd492fbe49ff48364d84be42839405"
   license "MIT"
-  version "0.17.2"
+  version "0.18.0"
 
-  depends_on "go@1.21" => :build
+  depends_on "go@1.22" => :build
 
   def install
     Dir.chdir("src") do
       ENV["GOPROXY"] = ENV.has_key?("HOMEBREW_GOPROXY") ? ENV["HOMEBREW_GOPROXY"] : ""
-      system("go build -o=aliae -ldflags=\"-s -w -X \'main.Version=0.17.2\'\"")
+      system("go build -o=aliae -ldflags=\"-s -w -X \'main.Version=0.18.0\'\"")
       bin.install "aliae"
     end
   end
