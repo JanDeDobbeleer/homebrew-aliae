@@ -2,21 +2,22 @@ name: Metrics
 on:
   schedule:
     - cron: "0 1 * * *"
+  workflow_dispatch:
 
 jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
     - name: Install Node ⬇️
-      uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+      uses: actions/setup-node@v4
       with:
-        node-version: 17
+        node-version: 20
     - name: Install dependencies ⚙️
       run: npm install applicationinsights
     - name: Fetch repo clones and report 📈
-      uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410
+      uses: actions/github-script@v7
       env:
-        APPINSIGHTS_INSTRUMENTATIONKEY: ${{ secrets.APPINSIGHTS_INSTRUMENTATIONKEY }}
+        APPLICATIONINSIGHTS_CONNECTION_STRING: ${{ secrets.APPLICATIONINSIGHTS_CONNECTION_STRING }}
       with:
         github-token: ${{ secrets.GH_PAT }}
         script: |
