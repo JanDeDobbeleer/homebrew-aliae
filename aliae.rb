@@ -6,8 +6,9 @@ class Aliae < Formula
   sha256 "fae24264ba59214a657f0e4022e527ecd9459e66eb7bf3fdab1484a2fef78276"
   license "MIT"
   version "0.26.5"
+  revision 1
 
-  depends_on "go@1.22" => :build
+  depends_on "go@1.24" => :build
 
   def install
     Dir.chdir("src") do
@@ -34,4 +35,3 @@ class Aliae < Formula
     system "#{bin}/aliae", "--help"
   end
 end
-
